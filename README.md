@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vaultlab
+
+Marketing site built with Next.js (App Router), Tailwind CSS, and Framer Motion. Global font is Plus Jakarta Sans, loaded via `next/font`.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/                 Route files only: layout, page, sitemap, robots, OG image
+  components/
+    layout/            Navbar, Footer — shared chrome
+    sections/           One file per homepage section (Hero, About, Portfolio, ...)
+    ui/                 Small reusable primitives (Button, InfiniteSlider)
+  config/site.ts        Single source of truth for site name, description, nav links, SEO copy
+  data/                 Content arrays consumed by sections (services, portfolio, partners, ...)
+  lib/                  Framework-agnostic helpers (motion variants, cn())
+```
 
-## Learn More
+To edit page copy or lists (services, portfolio items, nav links, etc.), change the relevant file
+under `src/data/` or `src/config/site.ts` — the section components render that data and shouldn't
+need to change for content updates.
 
-To learn more about Next.js, take a look at the following resources:
+To add a new homepage section: create a component in `src/components/sections/`, add its data (if
+any) under `src/data/`, then import and place it in `src/app/page.tsx`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Metadata (title template, description, Open Graph, Twitter card, canonical) is defined once in
+  `src/app/layout.tsx` from `src/config/site.ts`.
+- `src/app/sitemap.ts` and `src/app/robots.ts` are generated from the same config.
+- `src/app/opengraph-image.tsx` generates the social share image at build time.
+- Update `siteConfig.url` in `src/config/site.ts` to the real production domain before deploying.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` — start the dev server
+- `npm run build` — production build
+- `npm run start` — serve the production build
+- `npm run lint` — run ESLint
