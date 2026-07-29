@@ -27,10 +27,10 @@ export function WhyUs() {
         className="relative z-10 mx-auto -mt-24 max-w-5xl rounded-[2.5rem] bg-white px-8 py-14 sm:px-14"
       >
         <p className="flex items-center gap-2 text-sm font-medium text-brand-secondary">
-          ↳ THE BACKBONE OF YOUR GROWTH
+          ↳ KENAPA HARUS KAMI
         </p>
         <h2 className="mt-4 max-w-lg text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
-          Marketing that feels like a partnership.
+          Pengerjaan website yang terasa seperti kemitraan.
         </h2>
 
         <motion.div

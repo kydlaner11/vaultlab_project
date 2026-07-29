@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
@@ -21,15 +22,15 @@ export function Hero() {
           className="flex items-center justify-center gap-2 text-sm font-medium tracking-wide text-zinc-500"
         >
           <ArrowDownRight className="size-4 text-brand-secondary" />
-          WELCOME TO {siteConfig.name.toUpperCase()}
+          SELAMAT DATANG DI {siteConfig.name.toUpperCase()}
         </motion.p>
 
         <h1 className="mx-auto mt-6 max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
           <motion.span variants={fadeUp} className="block text-zinc-900">
-            Your Next Big
+            Website Impian
           </motion.span>
           <motion.span variants={fadeUp} className="mt-2 flex items-center justify-center gap-3">
-            <span className="text-zinc-900">Growth</span>
+            <span className="text-zinc-900">Bisnis</span>
             <motion.span
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
@@ -37,36 +38,36 @@ export function Hero() {
             >
               <ArrowDownRight className="size-5 text-white sm:size-6" />
             </motion.span>
-            <span className="text-zinc-300">Move</span>
+            <span className="text-zinc-300">Anda</span>
           </motion.span>
           <motion.span variants={fadeUp} className="mt-2 block text-zinc-300">
-            Starts Here
+            Dimulai di Sini
           </motion.span>
         </h1>
 
         <motion.p variants={fadeUp} className="mx-auto mt-8 max-w-xl text-lg text-zinc-600">
-          I&apos;m a growth strategist helping brands scale through SEO, performance media, and
-          conversion-focused design. Explore the work — the numbers speak for themselves.
+          Kami membantu bisnis Anda tampil profesional secara online lewat website yang cepat, modern,
+          dan dioptimasi untuk SEO. Lihat hasil karya kami — kualitasnya berbicara sendiri.
         </motion.p>
 
         <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <motion.a
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[#181818] px-6 py-3 text-base font-medium text-white transition-colors hover:bg-zinc-800"
-          >
-            Book a Call
-            <ArrowDownRight className="size-4" />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            href="#work"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-6 py-3 text-base font-medium text-zinc-800 transition-colors hover:bg-zinc-900/5"
-          >
-            See My Work
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 rounded-full bg-[#181818] px-6 py-3 text-base font-medium text-white transition-colors hover:bg-zinc-800"
+            >
+              Konsultasi Gratis
+              <ArrowDownRight className="size-4" />
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-6 py-3 text-base font-medium text-zinc-800 transition-colors hover:bg-zinc-900/5"
+            >
+              Lihat Karya Kami
+            </Link>
+          </motion.div>
         </motion.div>
       </motion.div>
 
@@ -80,7 +81,7 @@ export function Hero() {
         <div className="relative aspect-video overflow-hidden rounded-[2rem] bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900">
           <Image
             src="https://picsum.photos/seed/lumora-hero/1600/900"
-            alt="Preview of a Vaultlab client growth strategy project"
+            alt="Contoh tampilan website hasil karya Vaultlab"
             fill
             priority
             sizes="(min-width: 1280px) 1152px, 100vw"
@@ -98,21 +99,21 @@ export function Hero() {
               />
             </div>
             <div>
-              <p className="text-sm font-medium text-white">Aurora Retail — Scale Strategy</p>
-              <a href="#work" className="text-xs text-brand-light hover:underline">
-                See Details ↳
-              </a>
+              <p className="text-sm font-medium text-white">Kopi Nusantara — Toko Online</p>
+              <Link href="/portfolio/kopi-nusantara-toko-online" className="text-xs text-brand-light hover:underline">
+                Lihat Detail ↳
+              </Link>
             </div>
           </div>
 
           <div className="absolute bottom-4 right-4 flex gap-3 sm:bottom-8 sm:right-8">
             <div className="rounded-2xl bg-white/95 px-4 py-3 shadow-lg">
-              <p className="text-2xl font-semibold text-zinc-900">3.8x</p>
-              <p className="text-xs text-zinc-500">Across paid campaigns</p>
+              <p className="text-2xl font-semibold text-zinc-900">120+</p>
+              <p className="text-xs text-zinc-500">Website telah diluncurkan</p>
             </div>
             <div className="rounded-2xl bg-white/95 px-4 py-3 shadow-lg">
-              <p className="text-2xl font-semibold text-zinc-900">+240%</p>
-              <p className="text-xs text-zinc-500">Organic growth, 8mo</p>
+              <p className="text-2xl font-semibold text-zinc-900">98%</p>
+              <p className="text-xs text-zinc-500">Klien puas & merekomendasikan</p>
             </div>
           </div>
         </div>
@@ -120,7 +121,7 @@ export function Hero() {
 
       <div className="mx-auto mt-16 max-w-6xl px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row">
-          <p className="text-sm text-zinc-500 md:w-44 md:text-right">Trusted by growing teams</p>
+          <p className="text-sm text-zinc-500 md:w-44 md:text-right">Dipercaya oleh berbagai bisnis</p>
           <div className="relative w-full overflow-hidden md:w-[calc(100%-11rem)]">
             <InfiniteSlider gap={80} duration={30} durationOnHover={60}>
               {partners.map(({ name, icon: Icon }) => (

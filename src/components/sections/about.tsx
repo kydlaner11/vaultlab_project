@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import { fadeUp, staggerContainer } from "@/lib/motion";
@@ -17,33 +18,33 @@ export function About() {
         >
           <motion.p variants={fadeUp} className="flex items-center gap-2 text-sm font-medium text-zinc-400">
             <ArrowDownRight className="size-4 text-brand-light" />
-            THE STORY
+            TENTANG KAMI
           </motion.p>
 
           <motion.h2 variants={fadeUp} className="mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-            Strategy first,{" "}
-            <span className="text-zinc-500">execution always.</span>
+            Proses rapi,{" "}
+            <span className="text-zinc-500">hasil yang nyata.</span>
           </motion.h2>
 
           <motion.p variants={fadeUp} className="mt-6 max-w-md text-zinc-400">
-            I lead brand and digital projects from a clear brief to a finished system —
-            blending strategic thinking with visual sensitivity to build results that last.
+            Kami menangani setiap proyek website dari brief awal hingga siap online — memadukan
+            strategi desain dengan teknologi terkini untuk hasil yang tahan lama.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-light"
             >
-              More About Me
+              Lebih Lanjut Tentang Kami
               <ArrowDownRight className="size-4" />
-            </a>
-            <a
-              href="#services"
+            </Link>
+            <Link
+              href="/#services"
               className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#181818] transition-colors hover:bg-zinc-200"
             >
-              See Services
-            </a>
+              Lihat Layanan
+            </Link>
           </motion.div>
 
           <motion.div
@@ -60,21 +61,21 @@ export function About() {
               />
             </div>
             <div>
-              <p className="font-medium text-white">Nimbus Finance — Scale Strategy</p>
-              <a href="#work" className="text-sm text-brand-light hover:underline">
-                See Details ↳
-              </a>
+              <p className="font-medium text-white">Klinik Sehat — Company Profile</p>
+              <Link href="/portfolio/klinik-sehat-company-profile" className="text-sm text-brand-light hover:underline">
+                Lihat Detail ↳
+              </Link>
             </div>
           </motion.div>
 
           <motion.div variants={fadeUp} className="mt-6 grid max-w-md grid-cols-2 gap-4">
             <div className="rounded-2xl bg-white p-4 text-[#181818]">
-              <p className="text-2xl font-semibold">3.8x</p>
-              <p className="text-sm text-zinc-500">Across all paid campaigns</p>
+              <p className="text-2xl font-semibold">120+</p>
+              <p className="text-sm text-zinc-500">Website telah diluncurkan</p>
             </div>
             <div className="rounded-2xl bg-white p-4 text-[#181818]">
-              <p className="text-2xl font-semibold">+240%</p>
-              <p className="text-sm text-zinc-500">Organic, average 8 months</p>
+              <p className="text-2xl font-semibold">98%</p>
+              <p className="text-sm text-zinc-500">Tingkat kepuasan klien</p>
             </div>
           </motion.div>
         </motion.div>
@@ -83,7 +84,7 @@ export function About() {
           <div className="sticky top-32 aspect-[4/5] overflow-hidden rounded-[2rem]">
             <Image
               src="https://picsum.photos/seed/lumora-portrait/900/1100"
-              alt="Portrait of the Vaultlab growth strategist"
+              alt="Tim di balik Vaultlab"
               fill
               sizes="(min-width: 1024px) 540px, 100vw"
               className="object-cover"
@@ -94,7 +95,7 @@ export function About() {
         <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] lg:hidden">
           <Image
             src="https://picsum.photos/seed/lumora-portrait/900/1100"
-            alt="Portrait of the Vaultlab growth strategist"
+            alt="Tim di balik Vaultlab"
             fill
             sizes="100vw"
             className="object-cover"

@@ -9,17 +9,17 @@ export type ValuePoint = {
 export const valuePoints: ValuePoint[] = [
   {
     icon: Users,
-    title: "You talk to the person doing the work",
-    description: "No account managers in between — direct access from strategy to execution.",
+    title: "Komunikasi langsung dengan developer",
+    description: "Tanpa perantara — Anda bicara langsung dengan tim yang mengerjakan website Anda.",
   },
   {
     icon: Gauge,
-    title: "Decisions backed by data, not guesses",
-    description: "Every recommendation is tied to a metric you already care about.",
+    title: "Desain berdasarkan kebutuhan bisnis",
+    description: "Setiap elemen dirancang untuk mendukung tujuan bisnis Anda, bukan sekadar tampil bagus.",
   },
   {
     icon: ShieldCheck,
-    title: "Built to compound, not just spike",
-    description: "Systems that keep paying off long after the campaign ends.",
+    title: "Pendampingan setelah website live",
+    description: "Kami tetap mendampingi Anda untuk maintenance dan pengembangan setelah website diluncurkan.",
   },
 ];

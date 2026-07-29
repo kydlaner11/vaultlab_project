@@ -1,4 +1,13 @@
-import { Search, Workflow, BarChart3, Zap, Share2, PenTool, type LucideIcon } from "lucide-react";
+import {
+  Search,
+  Workflow,
+  BarChart3,
+  Building2,
+  Zap,
+  ShoppingBag,
+  Code2,
+  type LucideIcon,
+} from "lucide-react";
 
 export type ServiceCard = {
   title: string;
@@ -8,18 +17,18 @@ export type ServiceCard = {
 
 export const serviceCards: ServiceCard[] = [
   {
-    title: "Audits & Insights",
-    description: "Identify gaps and opportunities in your current setup to unlock performance and growth.",
+    title: "Konsultasi & Analisis",
+    description: "Kami pelajari kebutuhan bisnis Anda untuk menentukan solusi website yang paling tepat.",
     icon: Search,
   },
   {
-    title: "Growth Systems",
-    description: "Build scalable marketing funnels and automated systems that turn visitors into loyal clients.",
+    title: "Desain & Pengembangan",
+    description: "Website dibangun dari nol dengan desain custom, cepat, dan mudah digunakan.",
     icon: Workflow,
   },
   {
-    title: "Data-Driven Decisions",
-    description: "Transform complex analytics into actionable insight for faster, smarter decision-making.",
+    title: "Optimasi & Maintenance",
+    description: "Website Anda tetap aman, cepat, dan mudah ditemukan di mesin pencari.",
     icon: BarChart3,
   },
 ];
@@ -31,8 +40,8 @@ export type ServiceTile = {
 };
 
 export const serviceTiles: ServiceTile[] = [
-  { index: "01 — SEO", title: "SEO Optimization", icon: Search },
-  { index: "02 — Performance", title: "Performance Marketing", icon: Zap },
-  { index: "03 — Social", title: "Content & Social", icon: Share2 },
-  { index: "04 — Design", title: "Brand & UI Design", icon: PenTool },
+  { index: "01 — Company Profile", title: "Website Company Profile", icon: Building2 },
+  { index: "02 — Landing Page", title: "Landing Page Konversi", icon: Zap },
+  { index: "03 — Toko Online", title: "Website Toko Online", icon: ShoppingBag },
+  { index: "04 — Custom", title: "Aplikasi Web Custom", icon: Code2 },
 ];

@@ -20,7 +20,7 @@ export default function OpengraphImage() {
           color: "#fff",
         }}
       >
-        <div style={{ display: "flex", fontSize: 32, color: "#fbbf24", fontWeight: 600 }}>
+        <div style={{ display: "flex", fontSize: 32, color: "#7c90be", fontWeight: 600 }}>
           {siteConfig.name.toLowerCase()}.
         </div>
         <div style={{ display: "flex", marginTop: 32, fontSize: 60, fontWeight: 600, maxWidth: 960, lineHeight: 1.15 }}>

@@ -5,34 +5,36 @@ export type NavItem = {
 };
 
 export const navItems: NavItem[] = [
-  { name: "Home", href: "#top" },
-  { name: "About", href: "#about" },
+  { name: "Beranda", href: "/" },
+  { name: "Tentang", href: "/#about" },
   {
-    name: "Pages",
+    name: "Halaman",
     href: "#",
     children: [
-      { name: "Services", href: "#services" },
-      { name: "Work", href: "#work" },
+      { name: "Layanan", href: "/#services" },
+      { name: "Harga", href: "/pricing" },
+      { name: "Karya", href: "/portfolio" },
     ],
   },
-  { name: "Blog", href: "#" },
-  { name: "Contact", href: "#contact" },
+  { name: "Blog", href: "/blog" },
+  { name: "Kontak", href: "/#contact" },
 ];
 
 export const siteConfig = {
   name: "Vaultlab",
-  tagline: "Growth Strategy, SEO & Performance Marketing",
+  tagline: "Jasa Pembuatan Website Profesional & SEO Friendly",
   description:
-    "Vaultlab helps brands scale through SEO, performance media, and conversion-focused design. Strategy-led growth systems that compound.",
+    "Vaultlab adalah jasa pembuatan website untuk bisnis yang ingin tampil profesional secara online — company profile, landing page, hingga toko online yang cepat, modern, dan teroptimasi untuk SEO.",
   url: "https://vaultlab.vercel.app",
   email: "vaultlabproject@gmail.com",
-  locale: "en_US",
+  locale: "id_ID",
   keywords: [
-    "growth marketing agency",
-    "SEO strategy",
-    "performance marketing",
-    "conversion-focused design",
-    "digital growth strategist",
-    "brand and UI design",
+    "jasa pembuatan website",
+    "jasa bikin website",
+    "jasa website perusahaan",
+    "jasa landing page",
+    "jasa toko online",
+    "website SEO friendly",
+    "web developer profesional",
   ],
 } as const;

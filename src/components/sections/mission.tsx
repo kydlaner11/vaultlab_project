@@ -19,15 +19,15 @@ export function Mission() {
           <div>
             <motion.p variants={fadeUp} className="flex items-center gap-2 text-sm font-medium text-zinc-500">
               <ArrowDownRight className="size-4 text-brand-secondary" />
-              MY MISSION
+              MISI KAMI
             </motion.p>
             <motion.h2 variants={fadeUp} className="mt-4 max-w-xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
-              Transforming vision into results.
+              Mengubah ide menjadi website nyata.
             </motion.h2>
           </div>
           <motion.p variants={fadeUp} className="max-w-xs text-sm text-zinc-500">
-            I push the boundaries of digital growth through constant iteration and a
-            relentless focus on outcomes.
+            Kami terus berinovasi dalam desain dan teknologi untuk menghadirkan website yang
+            tidak hanya indah, tapi juga berdampak bagi bisnis Anda.
           </motion.p>
         </motion.div>
 

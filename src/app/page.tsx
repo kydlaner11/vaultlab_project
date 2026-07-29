@@ -5,6 +5,7 @@ import { About } from "@/components/sections/about";
 import { ServiceCards } from "@/components/sections/service-cards";
 import { ServiceMarquee } from "@/components/sections/service-marquee";
 import { Portfolio } from "@/components/sections/portfolio";
+import { Pricing } from "@/components/sections/pricing";
 import { WhyUs } from "@/components/sections/why-us";
 import { Mission } from "@/components/sections/mission";
 
@@ -12,12 +13,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden">
+      <main className="overflow-x-clip">
         <Hero />
         <About />
         <ServiceCards />
         <ServiceMarquee />
         <Portfolio />
+        <Pricing />
         <WhyUs />
         <Mission />
       </main>
