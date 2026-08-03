@@ -12,3 +12,7 @@ export function formatIndonesianDate(dateString: string) {
     year: "numeric",
   })
 }
+
+export function buildWhatsAppLink(phone: string, message: string) {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+}

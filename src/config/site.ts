@@ -27,6 +27,7 @@ export const siteConfig = {
     "Vaultlab adalah jasa pembuatan website untuk bisnis yang ingin tampil profesional secara online — company profile, landing page, hingga toko online yang cepat, modern, dan teroptimasi untuk SEO.",
   url: "https://vaultlab.vercel.app",
   email: "vaultlabproject@gmail.com",
+  whatsapp: "6281805755331",
   locale: "id_ID",
   keywords: [
     "jasa pembuatan website",

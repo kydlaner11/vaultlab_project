@@ -10,7 +10,7 @@ export type BlogPost = {
   category: string;
   date: string;
   readTime: string;
-  seed: string;
+  image: string;
   sections: BlogSection[];
 };
 
@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     category: "Bisnis",
     date: "2026-01-12",
     readTime: "4 menit baca",
-    seed: "blog-1",
+    image: "/images/blog/alasan-website-penting-untuk-bisnis.png",
     sections: [
       {
         heading: "Kredibilitas di mata calon pelanggan",
@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     date: "2026-01-20",
     readTime: "5 menit baca",
-    seed: "blog-2",
+    image: "/images/blog/cara-memilih-jasa-pembuatan-website.png",
     sections: [
       {
         heading: "Cek portofolio, bukan cuma harga",
@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
     category: "SEO",
     date: "2026-02-02",
     readTime: "6 menit baca",
-    seed: "blog-3",
+    image: "/images/blog/apa-itu-seo-on-page.png",
     sections: [
       {
         heading: "Definisi singkat SEO on-page",
@@ -91,7 +91,7 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     date: "2026-02-15",
     readTime: "4 menit baca",
-    seed: "blog-4",
+    image: "/images/blog/landing-page-vs-company-profile.png",
     sections: [
       {
         heading: "Landing page untuk satu tujuan spesifik",
@@ -114,7 +114,7 @@ export const blogPosts: BlogPost[] = [
     category: "E-commerce",
     date: "2026-03-01",
     readTime: "5 menit baca",
-    seed: "blog-5",
+    image: "/images/blog/tips-website-toko-online-meningkatkan-penjualan.png",
     sections: [
       {
         heading: "Proses checkout yang singkat",
@@ -137,7 +137,7 @@ export const blogPosts: BlogPost[] = [
     category: "Maintenance",
     date: "2026-03-10",
     readTime: "3 menit baca",
-    seed: "blog-6",
+    image: "/images/blog/kenapa-maintenance-website-penting.png",
     sections: [
       {
         heading: "Keamanan yang terus berubah",

@@ -1,11 +1,11 @@
 export type MissionTag = {
-  seed: string;
   label: string;
+  image: string;
 };
 
 export const missionTags: MissionTag[] = [
-  { seed: "lumora-tag-1", label: "TOKO ONLINE MODERN" },
-  { seed: "lumora-tag-2", label: "COMPANY PROFILE ELEGAN" },
-  { seed: "lumora-tag-3", label: "LANDING PAGE UMKM" },
-  { seed: "lumora-tag-4", label: "WEBSITE PORTOFOLIO" },
+  { label: "TOKO ONLINE MODERN", image: "/images/mission/toko-online-modern.png" },
+  { label: "COMPANY PROFILE ELEGAN", image: "/images/mission/company-profile-elegan.png" },
+  { label: "LANDING PAGE UMKM", image: "/images/mission/landing-page-umkm.png" },
+  { label: "WEBSITE PORTOFOLIO", image: "/images/mission/website-portofolio.png" },
 ];

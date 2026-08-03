@@ -12,7 +12,7 @@ export function ProjectCard({ project }: { project: PortfolioProject }) {
       <Link href={`/portfolio/${project.slug}`} className="group block">
         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-zinc-200">
           <Image
-            src={`https://picsum.photos/seed/${project.seed}/900/700`}
+            src={project.image}
             alt={project.title}
             fill
             sizes="(min-width: 640px) 50vw, 100vw"

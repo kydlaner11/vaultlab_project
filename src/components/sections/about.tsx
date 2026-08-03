@@ -47,13 +47,13 @@ export function About() {
             </Link>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             variants={fadeUp}
             className="mt-12 flex max-w-md items-center gap-4 rounded-2xl bg-[#232323] p-4"
           >
             <div className="relative size-16 shrink-0 overflow-hidden rounded-xl">
               <Image
-                src="https://picsum.photos/seed/lumora-about-case/120/120"
+                src="/images/portfolio/klinik-sehat-company-profile.png"
                 alt=""
                 fill
                 sizes="64px"
@@ -66,7 +66,7 @@ export function About() {
                 Lihat Detail ↳
               </Link>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div variants={fadeUp} className="mt-6 grid max-w-md grid-cols-2 gap-4">
             <div className="rounded-2xl bg-white p-4 text-[#181818]">
@@ -81,9 +81,9 @@ export function About() {
         </motion.div>
 
         <div className="relative hidden lg:block">
-          <div className="sticky top-32 aspect-[4/5] overflow-hidden rounded-[2rem]">
+          <div className="sticky top-32 aspect-4/5 overflow-hidden rounded-[2rem]">
             <Image
-              src="https://picsum.photos/seed/lumora-portrait/900/1100"
+              src="/images/about/about-portrait.png"
               alt="Tim di balik Vaultlab"
               fill
               sizes="(min-width: 1024px) 540px, 100vw"
@@ -92,9 +92,9 @@ export function About() {
           </div>
         </div>
 
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] lg:hidden">
+        <div className="relative aspect-4/5 overflow-hidden rounded-[2rem] lg:hidden">
           <Image
-            src="https://picsum.photos/seed/lumora-portrait/900/1100"
+            src="/images/about/about-portrait.png"
             alt="Tim di balik Vaultlab"
             fill
             sizes="100vw"

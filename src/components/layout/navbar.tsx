@@ -4,8 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { Menu, X, ShoppingCart, ArrowDownRight, Plus } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, buildWhatsAppLink } from "@/lib/utils";
 import { siteConfig, navItems } from "@/config/site";
+
+const whatsappHref = buildWhatsAppLink(
+  siteConfig.whatsapp,
+  "Halo, saya ingin konsultasi gratis untuk pembuatan website.",
+);
 
 function isActiveHref(pathname: string, href: string) {
   if (href.startsWith("/#") || href === "#") return false;
@@ -124,18 +129,20 @@ export function Navbar() {
         </button>
 
         <div className="hidden items-center gap-6 lg:flex">
-          <span className="flex items-center gap-2 text-sm text-zinc-300">
+          {/* <span className="flex items-center gap-2 text-sm text-zinc-300">
             <ShoppingCart className="size-4" />
             (0)
-          </span>
+          </span> */}
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-            <Link
-              href="/#contact"
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-light"
             >
               Konsultasi Gratis
               <ArrowDownRight className="size-4" />
-            </Link>
+            </a>
           </motion.div>
         </div>
 
@@ -175,14 +182,16 @@ export function Navbar() {
                         ],
                   )}
                 </ul>
-                <Link
-                  href="/#contact"
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="inline-flex w-fit items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-medium text-white"
                 >
                   Konsultasi Gratis
                   <ArrowDownRight className="size-4" />
-                </Link>
+                </a>
               </div>
             </motion.div>
           )}

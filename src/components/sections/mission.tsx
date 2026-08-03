@@ -38,14 +38,14 @@ export function Mission() {
           variants={staggerContainer}
           className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {missionTags.map(({ seed, label }) => (
+          {missionTags.map(({ image, label }) => (
             <motion.div
-              key={seed}
+              key={image}
               variants={fadeUp}
               className="relative aspect-[3/4] overflow-hidden rounded-3xl"
             >
               <Image
-                src={`https://picsum.photos/seed/${seed}/500/700`}
+                src={image}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"

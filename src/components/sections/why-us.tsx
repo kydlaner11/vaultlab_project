@@ -8,9 +8,9 @@ export function WhyUs() {
   return (
     <section className="relative overflow-hidden bg-[#181818] pb-6 pt-24 sm:pt-32">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem]">
+        <div className="relative aspect-video overflow-hidden rounded-[2rem]">
           <Image
-            src="https://picsum.photos/seed/lumora-texture/1600/900"
+            src="/images/why-us/texture1.png"
             alt=""
             fill
             sizes="(min-width: 1024px) 960px, 100vw"

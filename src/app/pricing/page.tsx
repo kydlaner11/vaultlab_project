@@ -7,7 +7,7 @@ import { FaqSection } from "@/components/pricing/faq-section";
 export const metadata: Metadata = {
   title: "Harga Paket",
   description:
-    "Harga paket jasa pembuatan website Vaultlab — Landing Page, Company Profile, dan Toko Online. Transparan tanpa biaya tersembunyi.",
+    "Harga paket jasa pembuatan website Vaultlab — Landing Page, Company Profile, Toko Online, hingga Aplikasi Web Custom. Transparan tanpa biaya tersembunyi.",
 };
 
 export default function PricingPage() {

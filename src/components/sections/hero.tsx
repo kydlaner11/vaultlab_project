@@ -7,6 +7,12 @@ import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { partners } from "@/data/partners";
 import { siteConfig } from "@/config/site";
+import { buildWhatsAppLink } from "@/lib/utils";
+
+const whatsappHref = buildWhatsAppLink(
+  siteConfig.whatsapp,
+  "Halo, saya ingin konsultasi gratis untuk pembuatan website.",
+);
 
 export function Hero() {
   return (
@@ -52,13 +58,15 @@ export function Hero() {
 
         <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-            <Link
-              href="/#contact"
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#181818] px-6 py-3 text-base font-medium text-white transition-colors hover:bg-zinc-800"
             >
               Konsultasi Gratis
               <ArrowDownRight className="size-4" />
-            </Link>
+            </a>
           </motion.div>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
             <Link
@@ -71,7 +79,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -80,7 +88,7 @@ export function Hero() {
       >
         <div className="relative aspect-video overflow-hidden rounded-[2rem] bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900">
           <Image
-            src="https://picsum.photos/seed/lumora-hero/1600/900"
+            src="/images/hero/hero-cover.png"
             alt="Contoh tampilan website hasil karya Vaultlab"
             fill
             priority
@@ -91,7 +99,7 @@ export function Hero() {
           <div className="absolute left-4 top-4 flex max-w-xs items-center gap-3 rounded-2xl bg-[#1c1c1cdd] p-3 backdrop-blur-md sm:left-8 sm:top-8">
             <div className="relative size-12 shrink-0 overflow-hidden rounded-xl">
               <Image
-                src="https://picsum.photos/seed/lumora-case/100/100"
+                src="/images/portfolio/kopi-nusantara-toko-online.png"
                 alt=""
                 fill
                 sizes="48px"
@@ -117,17 +125,22 @@ export function Hero() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       <div className="mx-auto mt-16 max-w-6xl px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row">
           <p className="text-sm text-zinc-500 md:w-44 md:text-right">Dipercaya oleh berbagai bisnis</p>
           <div className="relative w-full overflow-hidden md:w-[calc(100%-11rem)]">
-            <InfiniteSlider gap={80} duration={30} durationOnHover={60}>
-              {partners.map(({ name, icon: Icon }) => (
-                <div key={name} className="flex items-center gap-2 text-zinc-400">
-                  <Icon className="size-5" />
-                  <span className="text-base font-semibold">{name}</span>
+            <InfiniteSlider gap={56} duration={30} durationOnHover={60}>
+              {partners.map((partner) => (
+                <div key={partner.name} className="flex h-10 w-32 shrink-0 items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={128}
+                    height={40}
+                    className="h-full w-auto object-contain opacity-70 grayscale transition-opacity hover:opacity-100"
+                  />
                 </div>
               ))}
             </InfiniteSlider>

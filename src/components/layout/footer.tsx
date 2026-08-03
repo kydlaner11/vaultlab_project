@@ -1,20 +1,28 @@
 import Link from "next/link";
 import { ArrowDownRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { buildWhatsAppLink } from "@/lib/utils";
+
+const whatsappHref = buildWhatsAppLink(
+  siteConfig.whatsapp,
+  "Halo, saya ingin konsultasi gratis untuk pembuatan website.",
+);
 
 export function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-32 bg-[#181818] py-16 text-white sm:py-20">
+    <footer className="bg-[#181818] py-16 text-white sm:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-start justify-between gap-10 sm:flex-row sm:items-end">
           <div>
-            <p className="text-2xl font-semibold text-brand-light">{siteConfig.name.toLowerCase()}.</p>
+            <p className="text-2xl font-semibold text-white">{siteConfig.name.toLowerCase()}.</p>
             <h2 className="mt-6 max-w-md text-3xl font-semibold tracking-tight sm:text-4xl">
               Siap membuat website terbaik untuk bisnis Anda?
             </h2>
           </div>
           <a
-            href={`mailto:${siteConfig.email}`}
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-brand px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-light"
           >
             Konsultasi Gratis

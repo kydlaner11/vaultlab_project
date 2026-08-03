@@ -7,6 +7,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { portfolioProjects } from "@/data/portfolio";
+import { siteConfig } from "@/config/site";
+import { buildWhatsAppLink } from "@/lib/utils";
 
 export function generateStaticParams() {
   return portfolioProjects.map((project) => ({ slug: project.slug }));
@@ -69,7 +71,7 @@ export default async function PortfolioDetailPage({
           <div className="mx-auto max-w-5xl px-6">
             <div className="relative aspect-video overflow-hidden rounded-[2rem]">
               <Image
-                src={`https://picsum.photos/seed/${project.seed}/1600/900`}
+                src={project.image}
                 alt={project.title}
                 fill
                 priority
@@ -127,13 +129,18 @@ export default async function PortfolioDetailPage({
               </h2>
               <p className="mt-2 text-zinc-400">Konsultasikan kebutuhan website Anda, gratis tanpa komitmen.</p>
             </div>
-            <Link
-              href="/#contact"
+            <a
+              href={buildWhatsAppLink(
+                siteConfig.whatsapp,
+                `Halo, saya tertarik dengan hasil serupa proyek ${project.title}.`,
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-2 rounded-full bg-brand px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-light"
             >
               Konsultasi Gratis
               <ArrowDownRight className="size-4" />
-            </Link>
+            </a>
           </div>
         </section>
 

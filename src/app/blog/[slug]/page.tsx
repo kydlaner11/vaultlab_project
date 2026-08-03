@@ -7,7 +7,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PostCard } from "@/components/blog/post-card";
 import { blogPosts } from "@/data/blog";
-import { formatIndonesianDate } from "@/lib/utils";
+import { formatIndonesianDate, buildWhatsAppLink } from "@/lib/utils";
+import { siteConfig } from "@/config/site";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -70,7 +71,7 @@ export default async function BlogDetailPage({
           <div className="mx-auto max-w-3xl px-6">
             <div className="relative aspect-video overflow-hidden rounded-[2rem]">
               <Image
-                src={`https://picsum.photos/seed/${post.seed}/1600/900`}
+                src={post.image}
                 alt={post.title}
                 fill
                 priority
@@ -100,13 +101,18 @@ export default async function BlogDetailPage({
               </h2>
               <p className="mt-2 text-zinc-400">Konsultasikan kebutuhan bisnis Anda, gratis tanpa komitmen.</p>
             </div>
-            <Link
-              href="/#contact"
+            <a
+              href={buildWhatsAppLink(
+                siteConfig.whatsapp,
+                "Halo, saya ingin konsultasi gratis untuk pembuatan website.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-2 rounded-full bg-brand px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-light"
             >
               Konsultasi Gratis
               <ArrowDownRight className="size-4" />
-            </Link>
+            </a>
           </div>
         </section>
 

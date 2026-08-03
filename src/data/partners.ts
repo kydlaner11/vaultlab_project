@@ -1,15 +1,13 @@
-import { Search, Workflow, BarChart3, type LucideIcon } from "lucide-react";
-
 export type Partner = {
   name: string;
-  icon: LucideIcon;
+  logo: string;
 };
 
 export const partners: Partner[] = [
-  { name: "Kopi Nusantara", icon: Workflow },
-  { name: "Griya Sehat", icon: BarChart3 },
-  { name: "Berkah Retail", icon: Search },
-  { name: "Nusantara Fashion", icon: Workflow },
-  { name: "Cahaya Konsultan", icon: BarChart3 },
-  { name: "Warung Digital", icon: Search },
+  { name: "Billions Coffee", logo: "/images/partners/billions-coffee.png" },
+  { name: "Griya Sehat", logo: "/images/partners/griya-sehat.svg" },
+  { name: "Berkah Retail", logo: "/images/partners/berkah-retail.svg" },
+  { name: "Nusantara Fashion", logo: "/images/partners/nusantara-fashion.svg" },
+  { name: "Cahaya Konsultan", logo: "/images/partners/cahaya-konsultan.svg" },
+  { name: "Warung Digital", logo: "/images/partners/warung-digital.svg" },
 ];

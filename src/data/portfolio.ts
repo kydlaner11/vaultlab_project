@@ -1,6 +1,6 @@
 export type PortfolioProject = {
   slug: string;
-  seed: string;
+  image: string;
   title: string;
   client: string;
   category: string;
@@ -16,7 +16,7 @@ export type PortfolioProject = {
 export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "kopi-nusantara-toko-online",
-    seed: "lumora-work-1",
+    image: "/images/portfolio/kopi-nusantara-toko-online.png",
     title: "Kopi Nusantara — Website Toko Online",
     client: "Kopi Nusantara",
     category: "E-commerce",
@@ -34,7 +34,7 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "klinik-sehat-company-profile",
-    seed: "lumora-work-2",
+    image: "/images/portfolio/klinik-sehat-company-profile.png",
     title: "Klinik Sehat — Company Profile",
     client: "Klinik Sehat",
     category: "Company Profile",
@@ -52,7 +52,7 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "griya-interior-landing-page",
-    seed: "lumora-work-3",
+    image: "/images/portfolio/griya-interior-landing-page.png",
     title: "Griya Interior — Landing Page",
     client: "Griya Interior",
     category: "Landing Page",
@@ -70,7 +70,7 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "warung-digital-aplikasi-custom",
-    seed: "lumora-work-4",
+    image: "/images/portfolio/warung-digital-aplikasi-custom.png",
     title: "Warung Digital — Aplikasi Web Custom",
     client: "Warung Digital",
     category: "Web App",

@@ -12,7 +12,7 @@ export const pricingFaq: FaqItem[] = [
   {
     question: "Berapa lama proses pengerjaan website?",
     answer:
-      "Tergantung paket yang dipilih, mulai dari 5 hari kerja untuk Landing Page hingga 20 hari kerja untuk Toko Online. Estimasi bisa berubah sesuai kompleksitas kebutuhan.",
+      "Tergantung paket yang dipilih, mulai dari 5 hari kerja untuk paket Silver hingga 25 hari kerja untuk paket Platinum. Estimasi bisa berubah sesuai kompleksitas kebutuhan.",
   },
   {
     question: "Apakah ada revisi desain?",
@@ -20,7 +20,7 @@ export const pricingFaq: FaqItem[] = [
       "Ya, setiap paket sudah termasuk sesi revisi agar hasil akhir sesuai dengan kebutuhan dan brand bisnis Anda.",
   },
   {
-    question: "Bagaimana jika kebutuhan saya di luar 3 paket ini?",
+    question: "Bagaimana jika kebutuhan saya di luar 4 paket ini?",
     answer:
       "Kami juga melayani proyek custom. Hubungi kami untuk konsultasi gratis dan penawaran harga yang disesuaikan dengan kebutuhan Anda.",
   },

@@ -12,7 +12,7 @@ export function PostCard({ post }: { post: BlogPost }) {
       <Link href={`/blog/${post.slug}`} className="group block">
         <div className="relative aspect-[3/2] overflow-hidden rounded-3xl bg-zinc-200">
           <Image
-            src={`https://picsum.photos/seed/${post.seed}/900/600`}
+            src={post.image}
             alt={post.title}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
