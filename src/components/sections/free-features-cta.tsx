@@ -7,8 +7,8 @@ import { freeFeatures } from "@/data/free-features";
 
 export function FreeFeaturesCta() {
   return (
-    <section className="bg-[#faf6ef] pt-24 pb-5 sm:pt-32 sm:pb-10">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-background pt-24 pb-5 sm:pt-32 sm:pb-10">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -18,12 +18,12 @@ export function FreeFeaturesCta() {
         >
           <motion.p
             variants={fadeUp}
-            className="flex items-center justify-center gap-2 text-sm font-medium tracking-wide text-zinc-500"
+            className="flex items-center justify-center gap-2 text-sm font-medium tracking-wide text-muted-foreground"
           >
-            <ArrowDownRight className="size-4 text-brand-secondary" />
+            <ArrowDownRight className="size-4 text-brand" />
             FITUR
           </motion.p>
-          <motion.h2 variants={fadeUp} className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
+          <motion.h2 variants={fadeUp} className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Dapatkan Fitur Gratis untuk Website Anda!
           </motion.h2>
         </motion.div>
@@ -39,15 +39,15 @@ export function FreeFeaturesCta() {
             <motion.div
               key={title}
               variants={scaleIn}
-              className="flex flex-col justify-between rounded-3xl border border-zinc-200 bg-white p-8"
+              className="flex flex-col justify-between rounded-3xl border border-border bg-card p-8 transition-shadow hover:shadow-md"
             >
               <div>
-                <h3 className="text-lg font-semibold text-zinc-900">{title}</h3>
-                <div className="mt-10 flex justify-center">
-                  <Icon className="size-16 text-zinc-300" strokeWidth={1.25} />
+                <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+                <div className="mt-10 flex justify-start">
+                  <Icon className="size-16 text-brand" strokeWidth={1.25} />
                 </div>
               </div>
-              <p className="mt-10 text-sm text-zinc-500">{description}</p>
+              <p className="mt-10 text-sm text-muted-foreground">{description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -57,15 +57,15 @@ export function FreeFeaturesCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mt-10 rounded-[2.5rem] bg-[#181818] px-8 py-14 text-center text-white sm:px-14"
+          className="mt-10 rounded-4xl bg-surface-dark px-8 py-14 text-center text-on-dark sm:px-14"
         >
           <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">Bikin Website? Vaultlab Solusinya!</h3>
-          <p className="mx-auto mt-3 max-w-md text-zinc-400">
+          <p className="mx-auto mt-3 max-w-md text-on-dark-soft">
             Konsultasikan kebutuhan Anda dan dapatkan penawaran harga terbaik.
           </p>
           <Link
             href="/#pricing"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-light"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-active"
           >
             Lihat Paket Harga
             <ArrowDownRight className="size-4" />

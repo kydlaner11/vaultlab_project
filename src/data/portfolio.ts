@@ -15,75 +15,69 @@ export type PortfolioProject = {
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    slug: "kopi-nusantara-toko-online",
-    image: "/images/portfolio/kopi-nusantara-toko-online.png",
-    title: "Kopi Nusantara — Website Toko Online",
-    client: "Kopi Nusantara",
-    category: "E-commerce",
-    year: "2026",
-    meta: "2026 · E-commerce · UI/UX",
-    summary:
-      "Membangun toko online untuk brand kopi lokal agar bisa menjual produk langsung ke pelanggan di seluruh Indonesia, tanpa bergantung sepenuhnya pada marketplace.",
-    challenge:
-      "Kopi Nusantara hanya berjualan lewat marketplace dan belum punya kanal penjualan sendiri yang mencerminkan identitas brand mereka. Data pelanggan juga sulit dikelola karena tersebar di banyak platform.",
-    solution:
-      "Kami rancang toko online custom dengan sistem checkout yang simpel, galeri produk yang kuat secara visual, dan integrasi pembayaran lokal — lengkap dengan dashboard untuk kelola produk dan pesanan sendiri.",
-    result:
-      "Penjualan online meningkat dan brand mereka kini punya kanal penjualan yang sepenuhnya mereka kendalikan, lengkap dengan data pelanggan yang rapi untuk strategi pemasaran ke depan.",
-    services: ["Desain UI/UX", "Pengembangan Toko Online", "Integrasi Pembayaran"],
-  },
-  {
-    slug: "klinik-sehat-company-profile",
-    image: "/images/portfolio/klinik-sehat-company-profile.png",
-    title: "Klinik Sehat — Company Profile",
-    client: "Klinik Sehat",
+    slug: "fit-gym",
+    image: "/images/portfolio/fit-gym.webp",
+    title: "Fit Gym — Website Company Profile",
+    client: "Fit Gym",
     category: "Company Profile",
     year: "2026",
-    meta: "2026 · Company Profile · SEO",
+    meta: "2026 · Company Profile · Fitness",
     summary:
-      "Website profil untuk klinik kesehatan agar calon pasien mudah menemukan informasi layanan, dokter, dan jadwal praktik secara online.",
-    challenge:
-      "Klinik Sehat belum punya kehadiran online yang layak dipercaya — informasi layanan dan jadwal dokter hanya tersebar lewat media sosial dan sering membingungkan pasien baru.",
-    solution:
-      "Kami bangun website company profile dengan struktur informasi yang jelas: daftar layanan, profil dokter, jadwal praktik, dan lokasi — dioptimasi agar mudah ditemukan lewat pencarian Google di sekitar area klinik.",
-    result:
-      "Jumlah pasien baru yang datang lewat pencarian online meningkat, dan tim klinik jadi lebih mudah mengarahkan pasien untuk cek informasi lewat website ketimbang menjawab satu per satu lewat chat.",
-    services: ["Desain Company Profile", "SEO Lokal", "Integrasi Google Maps"],
+      "PLACEHOLDER — belum ada detail proyek. Ganti dengan ringkasan asli sebelum publish.",
+    challenge: "PLACEHOLDER — apa masalah yang dihadapi Fit Gym sebelum website ini dibuat?",
+    solution: "PLACEHOLDER — apa yang kalian bangun untuk mereka?",
+    result: "PLACEHOLDER — hasil atau dampak nyatanya apa?",
+    services: ["Desain Company Profile"],
   },
   {
-    slug: "griya-interior-landing-page",
-    image: "/images/portfolio/griya-interior-landing-page.png",
-    title: "Griya Interior — Landing Page",
-    client: "Griya Interior",
-    category: "Landing Page",
-    year: "2025",
-    meta: "2025 · Landing Page · Konversi",
+    slug: "billions-coffee",
+    image: "/images/portfolio/billions-coffee.webp",
+    title: "Billions Coffee — Website Company Profile",
+    client: "Billions Coffee",
+    category: "Company Profile",
+    year: "2026",
+    meta: "2026 · Company Profile · F&B",
     summary:
-      "Landing page untuk jasa desain interior yang fokus mengubah pengunjung iklan menjadi leads yang siap dihubungi tim sales.",
+      "Pengelolaan dan pengembangan website billionscoffee.co.id sebagai kanal informasi resmi untuk brand kopi Billions Coffee.",
     challenge:
-      "Griya Interior rutin beriklan di media sosial, tapi mengarahkan calon klien ke akun Instagram biasa membuat banyak leads hilang di tengah jalan karena tidak ada alur yang jelas untuk konsultasi.",
+      "Billions Coffee butuh website yang stabil dan mudah dikelola jangka panjang sebagai titik kontak resmi brand, di luar kanal media sosial mereka.",
     solution:
-      "Kami buat satu landing page terarah dengan portofolio proyek terbaik, testimoni klien, dan formulir konsultasi singkat yang langsung terhubung ke WhatsApp tim sales.",
+      "Kami kelola dan kembangkan website di hosting Hostinger, memastikan performa tetap stabil dan konten mudah diperbarui sesuai kebutuhan brand berjalan.",
     result:
-      "Rasio klik iklan yang berubah jadi konsultasi naik signifikan, dan tim sales kini menerima leads yang jauh lebih siap dan sesuai target pasar.",
-    services: ["Desain Landing Page", "Optimasi Konversi", "Integrasi WhatsApp"],
+      "Billions Coffee memiliki kanal online resmi yang konsisten terjaga dan siap dikembangkan lebih lanjut seiring pertumbuhan brand.",
+    services: ["Pengelolaan Website", "Web Hosting & Maintenance"],
   },
   {
-    slug: "warung-digital-aplikasi-custom",
-    image: "/images/portfolio/warung-digital-aplikasi-custom.png",
-    title: "Warung Digital — Aplikasi Web Custom",
-    client: "Warung Digital",
-    category: "Web App",
-    year: "2025",
-    meta: "2025 · Web App · Custom Development",
+    slug: "ahjumma-kitchen",
+    image: "/images/portfolio/ahjumma-kitchen.webp",
+    title: "Ahjumma Kitchen — Website Brand Kuliner",
+    client: "Ahjumma Kitchen",
+    category: "Company Profile",
+    year: "2026",
+    meta: "2026 · Company Profile · F&B",
     summary:
-      "Aplikasi web custom untuk mengelola jaringan warung mitra, mulai dari pencatatan stok hingga laporan penjualan harian.",
+      "Website untuk Ahjumma Kitchen, resto masakan rumahan Korea dengan lebih dari satu cabang, menonjolkan kehangatan dan keaslian resep khas rumahan.",
     challenge:
-      "Warung Digital mengelola puluhan warung mitra secara manual lewat spreadsheet, membuat proses pencatatan stok dan laporan penjualan jadi lambat dan rawan salah input.",
+      "Ahjumma Kitchen punya beberapa cabang (Mulyorejo, Lenmarc) dan menu yang beragam — dari menu harian hingga paket keluarga/sharing — tapi belum punya satu kanal yang merapikan semua informasi ini untuk pelanggan.",
     solution:
-      "Kami kembangkan aplikasi web custom dengan dashboard terpusat untuk setiap mitra warung, termasuk pencatatan stok otomatis dan laporan penjualan harian yang bisa diakses kapan saja.",
+      "Kami bangun website dengan look bersih dan terang (dominan putih, aksen coral/salmon secukupnya) terinspirasi referensi Hello Binggrae, lengkap dengan tab kategori menu, galeri produk, dan info tiap cabang.",
     result:
-      "Proses pencatatan yang tadinya memakan waktu berjam-jam kini selesai dalam hitungan menit, dan tim pusat bisa memantau performa semua warung mitra dari satu dashboard.",
-    services: ["Pengembangan Web App", "Desain Dashboard", "Sistem Multi-Mitra"],
+      "Pelanggan kini lebih mudah cek menu, cabang terdekat, dan opsi delivery atau paket keluarga tanpa harus scroll panjang di Instagram.",
+    services: ["Desain Company Profile", "UI/UX Multi-Cabang", "Menu Digital"],
+  },
+  {
+    slug: "manohara",
+    image: "/images/portfolio/manohara.webp",
+    title: "Manohara — Website",
+    client: "Manohara",
+    category: "Company Profile",
+    year: "2026",
+    meta: "2026 · Company Profile",
+    summary:
+      "PLACEHOLDER — belum ada detail proyek. Ganti dengan ringkasan asli sebelum publish.",
+    challenge: "PLACEHOLDER — apa masalah yang dihadapi Manohara sebelum website ini dibuat?",
+    solution: "PLACEHOLDER — apa yang kalian bangun untuk mereka?",
+    result: "PLACEHOLDER — hasil atau dampak nyatanya apa?",
+    services: ["Desain Company Profile"],
   },
 ];

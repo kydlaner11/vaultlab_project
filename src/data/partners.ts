@@ -4,10 +4,11 @@ export type Partner = {
 };
 
 export const partners: Partner[] = [
+  { name: "Bursopuri", logo: "/images/partners/bursopuri.png" },
+  { name: "Para Printing & Advertising", logo: "/images/partners/para.png" },
+  { name: "Unexpected", logo: "/images/partners/unexpected.png" },
   { name: "Billions Coffee", logo: "/images/partners/billions-coffee.png" },
-  { name: "Griya Sehat", logo: "/images/partners/griya-sehat.svg" },
-  { name: "Berkah Retail", logo: "/images/partners/berkah-retail.svg" },
-  { name: "Nusantara Fashion", logo: "/images/partners/nusantara-fashion.svg" },
-  { name: "Cahaya Konsultan", logo: "/images/partners/cahaya-konsultan.svg" },
-  { name: "Warung Digital", logo: "/images/partners/warung-digital.svg" },
+  { name: "Jk hampers", logo: "/images/partners/jkhampers.png" },
+  { name: "Hokbo", logo: "/images/partners/hokbo.png" },
+  { name: "Makay", logo: "/images/partners/mk.png" },
 ];

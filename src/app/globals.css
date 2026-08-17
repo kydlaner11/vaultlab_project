@@ -4,14 +4,49 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   PALETTE — Vaultlab, restructured on Coinbase-style discipline
+   ------------------------------------------------------------
+   ONE accent color carries every CTA + wordmark + link: Brand Navy.
+   Red is a rare highlight (badges, stat pop) — never a button fill.
+   Orange / Yellow / Cream stay chart/illustrative-only, never text.
+   New: surface-dark vs surface-dark-elevated, so dark sections and
+   the cards floating on top of them are visually distinct.
+   ============================================================ */
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-plus-jakarta-sans);
   --font-heading: var(--font-sans);
-  --color-brand: #0c2d72;
-  --color-brand-light: #7c90be;
-  --color-brand-secondary: #6b2537;
+
+  /* the single accent */
+  --color-brand: #003049;
+  --color-brand-active: #002236;      /* press state */
+  --color-brand-disabled: #94a9b6;    /* disabled CTA */
+  --color-brand-light: #2f6690;       /* hover / text-on-dark */
+
+  /* surfaces */
+  --color-surface-soft: #f7f7f7;
+  --color-surface-strong: #eef0f3;
+  --color-surface-dark: #0a0b0d;          /* full-bleed dark section bg */
+  --color-surface-dark-elevated: #16181c; /* cards floating inside it */
+
+  /* hairlines + text tiers */
+  --color-hairline: #dee1e6;
+  --color-body: #5b616e;
+  --color-muted: #7c828a;
+  --color-on-dark: #ffffff;
+  --color-on-dark-soft: #a8acb3;
+
+  /* rare highlight — badges / stat callouts only, never CTAs */
+  --color-brand-secondary: #d62828;
+
+  /* illustrative/chart only — never headline text, never CTAs */
+  --color-brand-orange: #f77f00;
+  --color-brand-yellow: #fcbf49;
+  --color-brand-cream: #eae2b7;
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -41,82 +76,85 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
+  /* radius scale — card radius pinned to 24px (rounded-xl) per the doc;
+     pills stay via Tailwind's rounded-full, not this scale */
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-xl: calc(var(--radius) * 1.4);   /* ≈ 0.875rem base -> tune below */
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --background: #ffffff;
+  --foreground: #051c29;
+  --card: #ffffff;
+  --card-foreground: #051c29;
+  --popover: #ffffff;
+  --popover-foreground: #051c29;
+  --primary: #003049;                 /* the one accent, everywhere */
+  --primary-foreground: #ffffff;
+  --secondary: #eaf1f6;
+  --secondary-foreground: #003049;
+  --muted: #eaf1f6;
+  --muted-foreground: #5c7889;
+  --accent: #fcbf49;                  /* illustrative accent, sparing */
+  --accent-foreground: #051c29;
+  --destructive: #d62828;
+  --border: #d9e3e9;
+  --input: #d9e3e9;
+  --ring: #003049;
+  --chart-1: #003049;
+  --chart-2: #d62828;
+  --chart-3: #f77f00;
+  --chart-4: #fcbf49;
+  --chart-5: #eae2b7;
+  --radius: 0.75rem;                  /* bumped slightly so --radius-xl lands ~24px */
+  --sidebar: #003049;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #d62828;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2f6690;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #2f6690;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #051622;
+  --foreground: #ffffff;
+  --card: #0b2233;
+  --card-foreground: #ffffff;
+  --popover: #0b2233;
+  --popover-foreground: #ffffff;
+  --primary: #2f6690;
+  --primary-foreground: #ffffff;
+  --secondary: #123044;
+  --secondary-foreground: #ffffff;
+  --muted: #123044;
+  --muted-foreground: #8fa9b8;
+  --accent: #fcbf49;
+  --accent-foreground: #051622;
+  --destructive: #e14b4b;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #2f6690;
+  --chart-1: #2f6690;
+  --chart-2: #d62828;
+  --chart-3: #f77f00;
+  --chart-4: #fcbf49;
+  --chart-5: #eae2b7;
+  --sidebar: #03101a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #d62828;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #123044;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #2f6690;
 }
 
 @layer base {

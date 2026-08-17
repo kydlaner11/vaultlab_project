@@ -20,16 +20,16 @@ export default function Home() {
       <main className="overflow-x-clip">
         <Hero />
         <About />
-        <Team />
-        {/* <ServiceCards /> */}
-        <ServiceMarquee />
-        <LeadForm />
-        <FreeFeaturesCta />
         <Pricing />
-        {/* <StatsBanner /> */}
-        <Portfolio />
         <WhyUs />
-        <Mission />
+        <FreeFeaturesCta />
+        {/* <Team /> */}
+        {/* <ServiceCards /> */}
+        {/* <ServiceMarquee /> */}
+        {/* <LeadForm /> */}
+        {/* <StatsBanner /> */}
+        {/* <Portfolio /> */}
+        {/* <Mission /> */}
       </main>
       <Footer />
     </>

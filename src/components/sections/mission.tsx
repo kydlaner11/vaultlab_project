@@ -7,8 +7,8 @@ import { missionTags } from "@/data/mission";
 
 export function Mission() {
   return (
-    <section className="bg-[#faf6ef] py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-surface-soft py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -17,15 +17,15 @@ export function Mission() {
           className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end"
         >
           <div>
-            <motion.p variants={fadeUp} className="flex items-center gap-2 text-sm font-medium text-zinc-500">
-              <ArrowDownRight className="size-4 text-brand-secondary" />
+            <motion.p variants={fadeUp} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <ArrowDownRight className="size-4 text-brand" />
               MISI KAMI
             </motion.p>
-            <motion.h2 variants={fadeUp} className="mt-4 max-w-xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
+            <motion.h2 variants={fadeUp} className="mt-4 max-w-xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
               Mengubah ide menjadi website nyata.
             </motion.h2>
           </div>
-          <motion.p variants={fadeUp} className="max-w-xs text-sm text-zinc-500">
+          <motion.p variants={fadeUp} className="max-w-xs text-sm text-muted-foreground">
             Kami terus berinovasi dalam desain dan teknologi untuk menghadirkan website yang
             tidak hanya indah, tapi juga berdampak bagi bisnis Anda.
           </motion.p>
@@ -52,7 +52,7 @@ export function Mission() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-medium tracking-wide text-zinc-800">
+              <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium tracking-wide text-foreground">
                 {label}
               </span>
             </motion.div>

@@ -6,9 +6,9 @@ import { valuePoints } from "@/data/why-us";
 
 export function WhyUs() {
   return (
-    <section className="relative overflow-hidden bg-[#181818] pb-6 pt-24 sm:pt-32">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="relative aspect-video overflow-hidden rounded-[2rem]">
+    <section className="relative overflow-hidden bg-surface-dark pb-12 pt-24 sm:pt-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="relative aspect-video overflow-hidden rounded-3xl">
           <Image
             src="/images/why-us/texture1.png"
             alt=""
@@ -24,12 +24,12 @@ export function WhyUs() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="relative z-10 mx-auto -mt-24 max-w-5xl rounded-[2.5rem] bg-white px-8 py-14 sm:px-14"
+        className="relative z-10 mx-auto -mt-52 max-w-7xl rounded-4xl bg-card px-8 py-14 sm:px-14"
       >
-        <p className="flex items-center gap-2 text-sm font-medium text-brand-secondary">
+        <p className="flex items-center gap-2 text-sm font-medium text-brand">
           ↳ KENAPA HARUS KAMI
         </p>
-        <h2 className="mt-4 max-w-lg text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
+        <h2 className="mt-4 max-w-lg text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
           Pengerjaan website yang terasa seperti kemitraan.
         </h2>
 
@@ -42,9 +42,9 @@ export function WhyUs() {
         >
           {valuePoints.map(({ icon: Icon, title, description }) => (
             <motion.div key={title} variants={fadeUp}>
-              <Icon className="size-7 text-brand-secondary" />
-              <h3 className="mt-4 font-medium text-zinc-900">{title}</h3>
-              <p className="mt-2 text-sm text-zinc-500">{description}</p>
+              <Icon className="size-7 text-brand" />
+              <h3 className="mt-4 font-medium text-foreground">{title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{description}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -40,7 +40,7 @@ export function LeadForm() {
 
   return (
     <section id="contact" className="scroll-mt-32 bg-[#faf6ef] py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial="hidden"

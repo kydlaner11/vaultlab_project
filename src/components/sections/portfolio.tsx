@@ -11,7 +11,7 @@ export function Portfolio() {
 
   return (
     <section className="bg-[#faf6ef] py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial="hidden"
           whileInView="show"
