@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { about } from "@/data/about";
+import { HoverScrollImage } from "@/components/ui/hover-scroll-image";
 
 function useDragScroll() {
   const ref = useRef<HTMLDivElement>(null);
@@ -97,15 +98,16 @@ export function About() {
                 draggable={false}
                 className="group relative block aspect-9/16 overflow-hidden rounded-2xl bg-surface-strong"
               >
-                <Image
+                <HoverScrollImage
                   src={project.image}
                   alt={project.name}
-                  fill
-                  sizes="(min-width: 640px) 256px, 208px"
+                  width={423}
+                  height={1800}
+                  duration={8}
                   draggable={false}
-                  className="object-cover object-top transition-transform duration-500 pointer-events-none group-hover:scale-105"
+                  containerClassName="h-full w-full"
                 />
-                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/0 to-black/0 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/0 to-black/0 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <p className="flex items-center gap-1 text-sm font-medium text-white">
                     {project.name}
                     <ArrowUpRight className="size-3.5" />

@@ -36,7 +36,6 @@ export const pricingPlans: PricingPlan[] = [
       "Fitur blog / artikel",
       "Pengerjaan 10 hari kerja",
     ],
-    highlighted: true,
     cta: "Pilih Paket",
   },
   {
@@ -52,6 +51,7 @@ export const pricingPlans: PricingPlan[] = [
       "Optimasi SEO lanjutan",
       "Pengerjaan 15 hari kerja",
     ],
+    highlighted: true,
     cta: "Pilih Paket",
   },
   {
