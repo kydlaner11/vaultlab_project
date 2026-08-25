@@ -40,7 +40,7 @@ export function About() {
 
   return (
     <section id="about" className="scroll-mt-32 bg-background py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -62,7 +62,7 @@ export function About() {
               className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl"
             >
               {about.headline.lead}{" "}
-              <span className="text-muted-foreground">{about.headline.muted}</span>{" "}
+              <span className="text-muted-foreground italic">{about.headline.muted}</span>{" "}
               {about.headline.tail}
             </motion.h2>
           </div>

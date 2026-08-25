@@ -47,7 +47,7 @@ function RotatingBadge() {
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-background pt-36 pb-20 sm:pt-44">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2 lg:gap-12">
+      <div className="mx-auto grid max-w-7xl px-6 items-center gap-16 lg:grid-cols-2 lg:gap-12">
         {/* Left — copy */}
         <motion.div
           initial="hidden"

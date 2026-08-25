@@ -9,17 +9,20 @@ interface HoverScrollImageProps extends Omit<ImageProps, "fill" | "style" | "ref
   containerClassName?: string;
   /** Durasi (detik) untuk scroll dari atas sampai bawah gambar. Makin besar = makin pelan/halus */
   duration?: number;
+  /** Jeda (detik) sebelum arah scroll berbalik, di atas & di bawah */
+  pauseDuration?: number;
 }
 
 /**
  * Gambar portrait yang lebih tinggi dari container-nya.
- * Saat di-hover, gambar "discroll" pelan ke bawah (translateY) sampai
- * menampilkan bagian bawah gambar, lalu kembali ke atas saat hover selesai.
- * Efek ini yang dipakai imajiner.id di kartu portofolio mereka.
+ * Otomatis "discroll" pelan ke bawah (translateY) sampai menampilkan
+ * bagian bawah gambar, lalu kembali ke atas, berulang terus — tanpa
+ * perlu hover atau interaksi apa pun.
  */
 export function HoverScrollImage({
   containerClassName = "",
   duration = 6,
+  pauseDuration = 0.8,
   alt,
   className,
   ...imageProps
@@ -27,7 +30,6 @@ export function HoverScrollImage({
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const [scrollDistance, setScrollDistance] = useState(0);
-  const [hovered, setHovered] = useState(false);
 
   const measure = () => {
     if (!containerRef.current || !imgRef.current) return;
@@ -49,21 +51,20 @@ export function HoverScrollImage({
   const canScroll = scrollDistance > 0;
 
   return (
-    <div
-      ref={containerRef}
-      className={`relative overflow-hidden ${containerClassName}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onTouchStart={() => setHovered(true)}
-      onTouchEnd={() => setHovered(false)}
-    >
+    <div ref={containerRef} className={`relative overflow-hidden ${containerClassName}`}>
       <motion.div
         className="absolute inset-x-0 top-0"
-        animate={{ y: hovered && canScroll ? -scrollDistance : 0 }}
+        animate={canScroll ? { y: [0, -scrollDistance] } : { y: 0 }}
         transition={
-          hovered && canScroll
-            ? { duration, ease: "linear" }
-            : { duration: 0.6, ease: "easeOut" }
+          canScroll
+            ? {
+                duration,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "reverse",
+                repeatDelay: pauseDuration,
+              }
+            : { duration: 0.3 }
         }
       >
         <Image

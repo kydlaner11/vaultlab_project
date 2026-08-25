@@ -7,15 +7,15 @@ export type NavItem = {
 export const navItems: NavItem[] = [
   { name: "Beranda", href: "/" },
   { name: "Tentang", href: "/#about" },
-  {
-    name: "Halaman",
-    href: "#",
-    children: [
-      { name: "Layanan", href: "/#services" },
-      { name: "Harga", href: "/pricing" },
-      { name: "Karya", href: "/portfolio" },
-    ],
-  },
+  // {
+  //   name: "Halaman",
+  //   href: "#",
+  //   children: [
+  //     { name: "Layanan", href: "/#services" },
+  //     { name: "Harga", href: "/pricing" },
+  //     { name: "Karya", href: "/portfolio" },
+  //   ],
+  // },
   { name: "Blog", href: "/blog" },
   { name: "Kontak", href: "/#contact" },
 ];

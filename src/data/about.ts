@@ -13,9 +13,9 @@ export type AboutStat = {
 export const about = {
   eyebrow: "SIAPA KAMI",
   headline: {
-    lead: "Kami membangun website",
-    muted: "yang membantu bisnis Anda",
-    tail: "tumbuh, bukan sekadar terlihat bagus.",
+    lead: "Website professional bikin bisnis mu",
+    muted: "level up",
+    tail: "bersama Vault lab Project!",
   },
   cta: {
     label: "LIHAT SEMUA PROJECT",
