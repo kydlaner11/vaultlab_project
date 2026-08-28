@@ -5,7 +5,7 @@ export type FixedFeature = {
 
 export type PricingPlan = {
   // name: string;
-  tier: "Starter" | "Business" | "Professional" | "Enterprise";
+  tier: "Growing" | "Business" | "Professional" | "Enterprise";
   price: string;
   renewalPrice?: string; // teks harga perpanjangan, tampil sebagai subtitle di bawah harga
   description: string;
@@ -17,7 +17,7 @@ export type PricingPlan = {
 
 export const pricingPlans: PricingPlan[] = [
   {
-    tier: "Starter",
+    tier: "Growing",
     price: "Rp 2,5jt",
     renewalPrice: "Perpanjangan 900.000/tahun",
     description: "Cocok untuk UMKM & personal brand yang butuh halaman promosi cepat dan profesional.",
@@ -60,12 +60,13 @@ export const pricingPlans: PricingPlan[] = [
       "Revisi 5x Pengerjaan",
       "VIP Maintenance & Support",
     ],
+    highlighted: true,
     cta: "Pilih Paket",
   },
   {
     tier: "Professional",
     price: "Rp 7,5jt",
-    renewalPrice: "Perpanjangan 1.500.000/tahun",
+    renewalPrice: "Perpanjangan 2.000.000/tahun",
     description: "Solusi lengkap untuk bisnis yang ingin berjualan online dengan sistem yang scalable.",
     fixedFeatures: [
       { icon: "page", label: "4-6 Halaman Website" },
@@ -81,7 +82,6 @@ export const pricingPlans: PricingPlan[] = [
       "Pengerjaan 15 hari kerja",
       "VVIP Maintenance & Support",
     ],
-    highlighted: true,
     cta: "Pilih Paket",
   },
   {

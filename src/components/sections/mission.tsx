@@ -42,7 +42,7 @@ export function Mission() {
             <motion.div
               key={image}
               variants={fadeUp}
-              className="relative aspect-[3/4] overflow-hidden rounded-3xl"
+              className="relative aspect-3/4 overflow-hidden rounded-3xl"
             >
               <Image
                 src={image}
@@ -51,7 +51,7 @@ export function Mission() {
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
               <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium tracking-wide text-foreground">
                 {label}
               </span>

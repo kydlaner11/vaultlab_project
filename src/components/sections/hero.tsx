@@ -55,13 +55,13 @@ export function Hero() {
           variants={staggerContainer}
           className="text-center lg:text-left"
         >
-          <motion.p
+          {/* <motion.p
             variants={fadeUp}
             className="inline-flex items-center gap-2 rounded-full bg-surface-strong px-4 py-1.5 text-sm font-medium text-foreground"
           >
             <ArrowDownRight className="size-4 text-brand" />
             SELAMAT DATANG DI {siteConfig.name.toUpperCase()}
-          </motion.p>
+          </motion.p> */}
 
           <h1 className="mx-auto mt-6 max-w-xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:mx-0">
             <motion.span variants={fadeUp} className="block text-foreground">

@@ -94,9 +94,9 @@ export function Pricing() {
                   </span>
                 )}
 
-                <p className={cn("mt-2 text-sm", plan.highlighted ? "text-white/60" : "text-muted-foreground")}>
+                {/* <p className={cn("mt-2 text-sm", plan.highlighted ? "text-white/60" : "text-muted-foreground")}>
                   {plan.description}
-                </p>
+                </p> */}
 
                 <p className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">{plan.price}</p>
 

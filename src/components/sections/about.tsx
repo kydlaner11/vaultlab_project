@@ -107,7 +107,7 @@ export function About() {
                   draggable={false}
                   containerClassName="h-full w-full"
                 />
-                <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/0 to-black/0 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="pointer-events-none absolute inset-0 flex items-end bg-linear-to-t from-black/70 via-black/0 to-black/0 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <p className="flex items-center gap-1 text-sm font-medium text-white">
                     {project.name}
                     <ArrowUpRight className="size-3.5" />

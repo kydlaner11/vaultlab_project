@@ -11,7 +11,7 @@ const whatsappHref = buildWhatsAppLink(
 export function Footer() {
   return (
     <footer className="bg-[#181818] py-16 text-white sm:py-20">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-10 sm:flex-row sm:items-end">
           <div>
             <p className="text-2xl font-semibold text-white">{siteConfig.name.toLowerCase()}.</p>
