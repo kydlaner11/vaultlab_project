@@ -86,12 +86,13 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     tier: "Enterprise",
-    price: "Custom Pricing",
+    price: "Custom Price",
+    renewalPrice: "Menyesuaikan kebutuhan",
     description: "Untuk kebutuhan sistem atau aplikasi web yang disesuaikan dengan proses bisnis Anda.",
     fixedFeatures: [
       { icon: "custom", label: "Custom Jumlah Halaman" },
       { icon: "domain", label: "Free Domain .com" },
-      { icon: "duration", label: "Aktif 1 Tahun" },
+      { icon: "duration", label: "Aktif 1 Tahun" },  
       { icon: "integration", label: "Custom UI/UX Design" },
       { icon: "support", label: "Prioritas Support" },
     ],

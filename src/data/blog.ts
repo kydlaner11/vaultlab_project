@@ -39,13 +39,13 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "cara-memilih-jasa-pembuatan-website",
-    title: "Cara Memilih Jasa Pembuatan Website yang Tepat",
-    excerpt: "Banyak pilihan jasa pembuatan website di luar sana. Berikut hal-hal yang perlu dicek sebelum memutuskan.",
+    slug: "cara-memilih-jasa-buat-website",
+    title: "Cara Memilih Jasa buat Website yang Tepat",
+    excerpt: "Banyak pilihan jasa buat website di luar sana. Berikut hal-hal yang perlu dicek sebelum memutuskan.",
     category: "Tips",
     date: "2026-01-20",
     readTime: "5 menit baca",
-    image: "/images/blog/cara-memilih-jasa-pembuatan-website.png",
+    image: "/images/blog/cara-memilih-jasa-buat-website.png",
     sections: [
       {
         heading: "Cek portofolio, bukan cuma harga",

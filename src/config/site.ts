@@ -34,6 +34,7 @@ export const siteConfig = {
     tiktok: "https://www.tiktok.com/@vaultlabproject",
   },
   keywords: [
+    "jasa buat website",
     "jasa buat website profesional",
     "jasa pembuatan website profesional",
     "jasa bikin website",
@@ -50,7 +51,7 @@ export const siteConfig = {
 export const promoConfig = {
   id: "promo-agustus-2026",
   active: true,
-  headline: "Diskon 30% Pembuatan Website Profesional",
+  headline: "Diskon 30% Jasa buat Website Profesional",
   ctaLabel: "Klaim Voucher Sekarang",
   discountPercent: 30,
   originalPrice: "Rp 3.500.000",

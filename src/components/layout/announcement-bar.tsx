@@ -42,7 +42,8 @@ function TimeBox({ value, label }: { value: string; label: string }) {
 
 export function AnnouncementBar() {
   const target = React.useMemo(() => new Date(promoConfig.endDate).getTime(), []);
-  const [timeLeft, setTimeLeft] = React.useState(() => getTimeLeft(target));
+  // null dulu — server & first client render sama-sama "belum tahu" waktu asli
+  const [timeLeft, setTimeLeft] = React.useState<ReturnType<typeof getTimeLeft> | null>(null);
   const [hidden, setHidden] = React.useState(false);
 
   const { scrollY } = useScroll();
@@ -52,11 +53,19 @@ export function AnnouncementBar() {
   });
 
   React.useEffect(() => {
+    // baru dihitung setelah mount di client — nggak lagi ikut proses SSR
+    setTimeLeft(getTimeLeft(target));
     const interval = setInterval(() => setTimeLeft(getTimeLeft(target)), 1000);
     return () => clearInterval(interval);
   }, [target]);
 
-  if (!promoConfig.active || timeLeft.diff <= 0) return null;
+  if (!promoConfig.active) return null;
+  if (timeLeft !== null && timeLeft.diff <= 0) return null;
+
+  const days = timeLeft?.days ?? 0;
+  const hours = timeLeft ? pad(timeLeft.hours) : "--";
+  const minutes = timeLeft ? pad(timeLeft.minutes) : "--";
+  const seconds = timeLeft ? pad(timeLeft.seconds) : "--";
 
   return (
     <motion.div
@@ -82,10 +91,10 @@ export function AnnouncementBar() {
             {promoConfig.headline}
           </span>
 
-          <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-black/25 px-2 py-0.5 text-xs sm:inline-flex">
+          {/* <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-black/25 px-2 py-0.5 text-xs sm:inline-flex">
             <span className="text-white/60 line-through">{promoConfig.originalPrice}</span>
             <span className="font-bold text-yellow-300">{promoConfig.discountedPrice}</span>
-          </span>
+          </span> */}
 
           <span className="shrink-0 rounded-full bg-yellow-300 px-1.5 py-0.5 text-[10px] font-extrabold text-red-700">
             -{promoConfig.discountPercent}%
@@ -96,25 +105,32 @@ export function AnnouncementBar() {
           </span>
         </div>
 
-        {/* Countdown row */}
-        <div className="flex shrink-0 items-center gap-1 rounded-md bg-black/25 px-1.5 py-0.5 sm:gap-2 sm:rounded-lg sm:px-2.5 sm:py-1">
-          <span className="text-[8px] font-medium uppercase tracking-wide opacity-80 sm:text-[11px]">
+        {/* Countdown row — desktop only */}
+        <div className="hidden shrink-0 items-center gap-1 rounded-md bg-black/25 px-1.5 py-0.5 sm:flex sm:gap-2 sm:rounded-lg sm:px-2.5 sm:py-1">
+          <span className="text-[11px] font-medium uppercase tracking-wide opacity-80">
             Berakhir
           </span>
-          <div className="flex items-center gap-0.5 sm:gap-1">
-            {timeLeft.days > 0 && (
+          <div className="flex items-center gap-1">
+            {days > 0 && (
               <>
-                <TimeBox value={pad(timeLeft.days)} label="hr" />
+                <TimeBox value={pad(days)} label="hr" />
                 <span className="opacity-50">:</span>
               </>
             )}
-            <TimeBox value={pad(timeLeft.hours)} label="jam" />
+            <TimeBox value={hours} label="jam" />
             <span className="opacity-50">:</span>
-            <TimeBox value={pad(timeLeft.minutes)} label="mnt" />
+            <TimeBox value={minutes} label="mnt" />
             <span className="opacity-50">:</span>
-            <TimeBox value={pad(timeLeft.seconds)} label="dtk" />
+            <TimeBox value={seconds} label="dtk" />
           </div>
         </div>
+        <motion.span
+          animate={{ scale: [1, 1.06, 1] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          className="flex shrink-0 items-center gap-1 rounded-full bg-yellow-300 px-2.5 py-1 text-[11px] font-extrabold text-red-700 sm:hidden"
+        >
+          Klaim Sekarang →
+        </motion.span>
       </a>
 
       <style jsx global>{`

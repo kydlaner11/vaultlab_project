@@ -54,7 +54,7 @@ export function Pricing() {
             Pilih paket sesuai kebutuhan bisnis Anda.
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-4 text-muted-foreground">
-            Harga transparan, tanpa biaya tersembunyi. Semua paket sudah termasuk revisi &amp; konsultasi gratis.
+            Jasa buat website dengan Harga transparan, tanpa biaya tersembunyi. Semua paket sudah termasuk revisi &amp; konsultasi gratis.
           </motion.p>
         </motion.div>
 

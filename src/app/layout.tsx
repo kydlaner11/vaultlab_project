@@ -9,7 +9,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const titleDefault = `${siteConfig.name} — ${siteConfig.tagline}`;
+const titleDefault = `${siteConfig.tagline} — ${siteConfig.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

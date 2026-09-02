@@ -24,7 +24,7 @@ export function FreeFeaturesCta() {
             FITUR
           </motion.p>
           <motion.h2 variants={fadeUp} className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            Dapatkan Fitur Gratis untuk Website Anda!
+            Dapatkan Fitur Gratis buat Website Anda!
           </motion.h2>
         </motion.div>
 
@@ -59,7 +59,7 @@ export function FreeFeaturesCta() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mt-10 rounded-4xl bg-surface-dark px-8 py-14 text-center text-on-dark sm:px-14"
         >
-          <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">Bikin Website? Vaultlab Solusinya!</h3>
+          <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">Cari Jasa buat Website? Vaultlab Solusinya!</h3>
           <p className="mx-auto mt-3 max-w-md text-on-dark-soft">
             Konsultasikan kebutuhan Anda dan dapatkan penawaran harga terbaik.
           </p>
