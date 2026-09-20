@@ -174,7 +174,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="mx-auto mt-20 max-w-7xl">
+      {/* <div className="mx-auto mt-20 max-w-7xl">
         <div className="flex flex-col items-center gap-6 md:flex-row">
           <p className="text-sm text-muted-foreground md:w-44 md:text-right">Dipercaya oleh berbagai bisnis</p>
           <div className="relative w-full overflow-hidden md:w-[calc(100%-11rem)]">
@@ -195,7 +195,7 @@ export function Hero() {
             <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-background" />
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

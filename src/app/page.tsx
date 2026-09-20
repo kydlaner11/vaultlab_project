@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
+import { AboutOther } from "@/components/sections/about-other";
 import { Team } from "@/components/sections/team";
 import { ServiceCards } from "@/components/sections/service-cards";
 import { ServiceMarquee } from "@/components/sections/service-marquee";
@@ -19,7 +20,8 @@ export default function Home() {
       <Navbar />
       <main className="overflow-x-clip">
         <Hero />
-        <About />
+        {/* <About /> */}
+        <AboutOther />
         <Pricing />
         <WhyUs />
         <FreeFeaturesCta />
