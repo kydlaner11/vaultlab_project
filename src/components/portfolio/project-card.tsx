@@ -1,32 +1,30 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowDownRight } from "lucide-react";
-import { fadeUp } from "@/lib/motion";
 import type { PortfolioProject } from "@/data/portfolio";
 
 export function ProjectCard({ project }: { project: PortfolioProject }) {
   return (
-    <motion.div variants={fadeUp}>
-      <Link href={`/portfolio/${project.slug}`} className="group block">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-zinc-200">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            sizes="(min-width: 640px) 50vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-        <div className="mt-4 flex items-start justify-between gap-4">
-          <div>
-            <h3 className="text-xl font-semibold text-zinc-900">{project.title}</h3>
-            <p className="mt-1 text-sm text-zinc-500">{project.meta}</p>
-          </div>
-          <ArrowDownRight className="mt-1 size-5 shrink-0 text-zinc-400 transition-transform group-hover:translate-x-1 group-hover:translate-y-1" />
-        </div>
-      </Link>
-    </motion.div>
+    <Link href={`/portfolio/${project.slug}`} className="group block rounded-xl">
+      {/* tangkapan layar website: tampilkan bagian atas halaman */}
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-surface-strong shadow-sm transition-[border-color,box-shadow] duration-200 group-hover:border-brand/40 group-hover:shadow-md">
+        <Image
+          src={project.image}
+          alt={`Tampilan website ${project.title}`}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      </div>
+
+      <h3 className="mt-4 text-[17px] leading-snug font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-brand">
+        {project.title}
+      </h3>
+      <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-2">
+        <p className="text-sm text-body">{project.meta}</p>
+        <span className="rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-body">
+          {project.category}
+        </span>
+      </div>
+    </Link>
   );
 }

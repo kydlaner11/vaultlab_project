@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowDownRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { buildWhatsAppLink } from "@/lib/utils";
+import { ButtonLink } from "@/components/ui/site-button";
 import { InstagramIcon } from "@/components/icons/instagram-icon";
 import { TikTokIcon } from "@/components/icons/tiktok-icon";
 
@@ -10,60 +11,97 @@ const whatsappHref = buildWhatsAppLink(
   "Halo, saya ingin konsultasi gratis untuk pembuatan website.",
 );
 
+const linkGroups = [
+  {
+    title: "Perusahaan",
+    links: [
+      { name: "Beranda", href: "/" },
+      { name: "Tentang", href: "/#about" },
+      { name: "Portofolio", href: "/portfolio" },
+    ],
+  },
+  {
+    title: "Layanan",
+    links: [
+      { name: "Layanan Kami", href: "/#layanan" },
+      { name: "Proses Kerja", href: "/#proses" },
+      { name: "Harga Paket", href: "/#pricing" },
+      { name: "FAQ", href: "/#faq" },
+    ],
+  },
+];
+
+const footerLink =
+  "rounded-sm text-sm text-on-dark-soft transition-colors duration-200 hover:text-white focus-visible:outline-white";
+
 export function Footer() {
   return (
-    <footer className="bg-[#181818] py-16 text-white sm:py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col items-start justify-between gap-10 sm:flex-row sm:items-end">
-          <div>
-            <p className="text-2xl font-semibold text-white">{siteConfig.name.toLowerCase()}.</p>
-            <h2 className="mt-6 max-w-md text-3xl font-semibold tracking-tight sm:text-4xl">
+    <footer className="bg-brand-dark text-white">
+      <div className="container-page py-16 sm:py-20">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-6">
+            <p className="text-2xl font-bold tracking-tight">{siteConfig.name.toLowerCase()}.</p>
+            <h2 className="mt-5 max-w-md text-2xl font-semibold leading-snug tracking-tight text-balance sm:text-3xl">
               Jasa buat website terbaik untuk bisnis Anda
             </h2>
+            <div className="mt-8">
+              <ButtonLink href={whatsappHref} variant="light" className="w-full sm:w-auto">
+                Konsultasi Gratis
+                <ArrowRight className="size-4" />
+              </ButtonLink>
+            </div>
           </div>
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-brand px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-light"
-          >
-            Konsultasi Gratis
-            <ArrowDownRight className="size-4" />
-          </a>
+
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-6 lg:justify-items-end">
+            {linkGroups.map((group) => (
+              <div key={group.title} className="lg:min-w-36">
+                <h3 className="text-sm font-semibold text-white">{group.title}</h3>
+                <ul className="mt-4 flex flex-col gap-3">
+                  {group.links.map((link) => (
+                    <li key={link.name}>
+                      <Link href={link.href} className={footerLink}>
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            <div className="lg:min-w-36">
+              <h3 className="text-sm font-semibold text-white">Ikuti Kami</h3>
+              <ul className="mt-4 flex flex-col gap-3">
+                <li>
+                  <a
+                    href={siteConfig.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${footerLink} inline-flex items-center gap-2`}
+                  >
+                    <InstagramIcon className="size-4" />
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={siteConfig.social.tiktok}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${footerLink} inline-flex items-center gap-2`}
+                  >
+                    <TikTokIcon className="size-4" />
+                    TikTok
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-            <div className="flex gap-6">
-              <Link href="/" className="hover:text-white">Beranda</Link>
-              <Link href="/#about" className="hover:text-white">Tentang</Link>
-              <Link href="/portfolio" className="hover:text-white">Portofolio</Link>
-            </div>
-
-            <div className="flex items-center gap-3 sm:border-l sm:border-white/10 sm:pl-6">
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram Vaultlab"
-                className="group relative flex size-8 items-center justify-center overflow-hidden rounded-full border border-white/15 text-zinc-400 transition-colors duration-300 hover:border-transparent hover:text-white"
-              >
-                <span className="absolute inset-0 scale-0 rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] transition-transform duration-300 group-hover:scale-100" />
-                <InstagramIcon className="relative z-10 size-3.5" />
-              </a>
-              <a
-                href={siteConfig.social.tiktok}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok Vaultlab"
-                className="group relative flex size-8 items-center justify-center overflow-hidden rounded-full border border-white/15 text-zinc-400 transition-colors duration-300 hover:border-transparent hover:text-black"
-              >
-                <span className="absolute inset-0 scale-0 rounded-full bg-white transition-transform duration-300 group-hover:scale-100" />
-                <TikTokIcon className="relative z-10 size-3.5" />
-              </a>
-            </div>
-          </div>
-          <p>© {new Date().getFullYear()} {siteConfig.name}. Seluruh hak cipta dilindungi.</p>
+        <div className="mt-14 border-t border-white/10 pt-8 text-sm text-on-dark-soft">
+          <p>
+            © {new Date().getFullYear()} {siteConfig.name}. Seluruh hak cipta dilindungi.
+          </p>
         </div>
       </div>
     </footer>

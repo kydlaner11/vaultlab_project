@@ -1,39 +1,36 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { MotionProvider } from "@/components/ui/motion-provider";
 import { Hero } from "@/components/sections/hero";
-import { About } from "@/components/sections/about";
+import { ClientLogos } from "@/components/sections/client-logos";
+import { Services } from "@/components/sections/services";
 import { AboutOther } from "@/components/sections/about-other";
-import { Team } from "@/components/sections/team";
-import { ServiceCards } from "@/components/sections/service-cards";
-import { ServiceMarquee } from "@/components/sections/service-marquee";
-import { LeadForm } from "@/components/sections/lead-form";
-import { FreeFeaturesCta } from "@/components/sections/free-features-cta";
-import { Pricing } from "@/components/sections/pricing";
-import { StatsBanner } from "@/components/sections/stats-banner";
+import { Process } from "@/components/sections/process";
 import { Portfolio } from "@/components/sections/portfolio";
+import { Pricing } from "@/components/sections/pricing";
 import { WhyUs } from "@/components/sections/why-us";
-import { Mission } from "@/components/sections/mission";
+import { Faq } from "@/components/sections/faq";
+import { FreeFeaturesCta } from "@/components/sections/free-features-cta";
+// Section lama (belum dipakai, dibiarkan agar mudah diaktifkan lagi):
+// About, Team, ServiceCards, ServiceMarquee, LeadForm, StatsBanner, Portfolio, Mission
 
 export default function Home() {
   return (
-    <>
+    <MotionProvider>
       <Navbar />
       <main className="overflow-x-clip">
         <Hero />
-        {/* <About /> */}
-        <AboutOther />
+        <ClientLogos />
+        <Services />
+        <Portfolio />
+        {/* <AboutOther /> */}
+        <Process />
         <Pricing />
-        <WhyUs />
-        <FreeFeaturesCta />
-        {/* <Team /> */}
-        {/* <ServiceCards /> */}
-        {/* <ServiceMarquee /> */}
-        {/* <LeadForm /> */}
-        {/* <StatsBanner /> */}
-        {/* <Portfolio /> */}
-        {/* <Mission /> */}
+        {/* <WhyUs /> */}
+        <Faq />
+        {/* <FreeFeaturesCta /> */}
       </main>
       <Footer />
-    </>
+    </MotionProvider>
   );
 }

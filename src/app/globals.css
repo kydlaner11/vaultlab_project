@@ -5,13 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
-   PALETTE — Vaultlab, restructured on Coinbase-style discipline
+   DESIGN TOKENS — Vaultlab (clean corporate blue)
    ------------------------------------------------------------
-   ONE accent color carries every CTA + wordmark + link: Brand Navy.
-   Red is a rare highlight (badges, stat pop) — never a button fill.
-   Orange / Yellow / Cream stay chart/illustrative-only, never text.
-   New: surface-dark vs surface-dark-elevated, so dark sections and
-   the cards floating on top of them are visually distinct.
+   Satu warna aksen (brand blue) untuk tombol utama, link, dan
+   highlight. Biru tua (brand-dark) hanya untuk section penting:
+   hero, paket unggulan, footer. Netral dingin untuk sisanya.
+   Nama token lama (brand, brand-light, surface-*, hairline, dst.)
+   dipertahankan agar section lain tidak rusak.
    ============================================================ */
 
 @theme inline {
@@ -20,29 +20,34 @@
   --font-sans: var(--font-plus-jakarta-sans);
   --font-heading: var(--font-sans);
 
-  /* the single accent */
-  --color-brand: #003049;
-  --color-brand-active: #002236;      /* press state */
-  --color-brand-disabled: #94a9b6;    /* disabled CTA */
-  --color-brand-light: #2f6690;       /* hover / text-on-dark */
+  /* brand */
+  --color-brand: #1459b8;           /* primary */
+  --color-brand-active: #104a99;    /* hover + press */
+  --color-brand-disabled: #9db8dd;
+  --color-brand-light: #8db8f0;     /* teks / ikon di atas biru tua */
+  --color-brand-tint: #eaf2fc;      /* latar biru lembut */
+  --color-brand-dark: #0a3673;      /* section biru tua */
 
   /* surfaces */
-  --color-surface-soft: #f7f7f7;
-  --color-surface-strong: #eef0f3;
-  --color-surface-dark: #0a0b0d;          /* full-bleed dark section bg */
-  --color-surface-dark-elevated: #16181c; /* cards floating inside it */
+  --color-surface-soft: #f6f8fb;
+  --color-surface-strong: #eef2f7;
+  --color-surface-dark: #0a3673;
+  --color-surface-dark-elevated: #0d4189;
 
-  /* hairlines + text tiers */
-  --color-hairline: #dee1e6;
-  --color-body: #5b616e;
-  --color-muted: #7c828a;
+  /* garis + tingkatan teks */
+  --color-hairline: #e2e7ef;
+  --color-body: #647084;
   --color-on-dark: #ffffff;
-  --color-on-dark-soft: #a8acb3;
+  --color-on-dark-soft: #c3d4ec;
 
-  /* rare highlight — badges / stat callouts only, never CTAs */
-  --color-brand-secondary: #d62828;
+  /* fungsional (error memakai --destructive) */
+  --color-success: #16835d;
+  --color-warning: #b7791f;
+  --color-info: #2563eb;
 
-  /* illustrative/chart only — never headline text, never CTAs */
+  /* LEGACY — tidak dipakai design system baru.
+     Hapus setelah tidak ada section yang memakainya. */
+  --color-brand-secondary: #c53b3b;
   --color-brand-orange: #f77f00;
   --color-brand-yellow: #fcbf49;
   --color-brand-cream: #eae2b7;
@@ -77,84 +82,155 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
 
-  /* radius scale — card radius pinned to 24px (rounded-xl) per the doc;
-     pills stay via Tailwind's rounded-full, not this scale */
+  /* skala radius (--radius = 10px):
+     md = 8px (tombol, input) · xl = 14px (kartu) */
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);   /* ≈ 0.875rem base -> tune below */
+  --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+@theme {
+  --animate-marquee: marquee 32s linear infinite;
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #051c29;
+  --foreground: #172033;
   --card: #ffffff;
-  --card-foreground: #051c29;
+  --card-foreground: #172033;
   --popover: #ffffff;
-  --popover-foreground: #051c29;
-  --primary: #003049;                 /* the one accent, everywhere */
+  --popover-foreground: #172033;
+  --primary: #1459b8;
   --primary-foreground: #ffffff;
-  --secondary: #eaf1f6;
-  --secondary-foreground: #003049;
-  --muted: #eaf1f6;
-  --muted-foreground: #5c7889;
-  --accent: #fcbf49;                  /* illustrative accent, sparing */
-  --accent-foreground: #051c29;
-  --destructive: #d62828;
-  --border: #d9e3e9;
-  --input: #d9e3e9;
-  --ring: #003049;
-  --chart-1: #003049;
-  --chart-2: #d62828;
-  --chart-3: #f77f00;
-  --chart-4: #fcbf49;
-  --chart-5: #eae2b7;
-  --radius: 0.75rem;                  /* bumped slightly so --radius-xl lands ~24px */
-  --sidebar: #003049;
+  --secondary: #eaf2fc;
+  --secondary-foreground: #0a3673;
+  --muted: #f6f8fb;
+  --muted-foreground: #647084;
+  --accent: #eaf2fc;
+  --accent-foreground: #0a3673;
+  --destructive: #c53b3b;
+  --border: #e2e7ef;
+  --input: #e2e7ef;
+  --ring: #1459b8;
+  --chart-1: #1459b8;
+  --chart-2: #5b9bea;
+  --chart-3: #0a3673;
+  --chart-4: #16835d;
+  --chart-5: #b7791f;
+  --radius: 0.625rem;
+  --sidebar: #0a3673;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #d62828;
+  --sidebar-primary: #1459b8;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2f6690;
+  --sidebar-accent: #104a99;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #2f6690;
+  --sidebar-ring: #8db8f0;
 }
 
 .dark {
-  --background: #051622;
-  --foreground: #ffffff;
-  --card: #0b2233;
-  --card-foreground: #ffffff;
-  --popover: #0b2233;
-  --popover-foreground: #ffffff;
-  --primary: #2f6690;
+  --background: #07182f;
+  --foreground: #f3f6fb;
+  --card: #0c2444;
+  --card-foreground: #f3f6fb;
+  --popover: #0c2444;
+  --popover-foreground: #f3f6fb;
+  --primary: #4a8ae0;
   --primary-foreground: #ffffff;
-  --secondary: #123044;
+  --secondary: #123a6e;
   --secondary-foreground: #ffffff;
-  --muted: #123044;
-  --muted-foreground: #8fa9b8;
-  --accent: #fcbf49;
-  --accent-foreground: #051622;
-  --destructive: #e14b4b;
+  --muted: #0f2d54;
+  --muted-foreground: #9db3d1;
+  --accent: #123a6e;
+  --accent-foreground: #ffffff;
+  --destructive: #e06060;
   --border: rgba(255, 255, 255, 0.12);
   --input: rgba(255, 255, 255, 0.15);
-  --ring: #2f6690;
-  --chart-1: #2f6690;
-  --chart-2: #d62828;
-  --chart-3: #f77f00;
-  --chart-4: #fcbf49;
-  --chart-5: #eae2b7;
-  --sidebar: #03101a;
+  --ring: #4a8ae0;
+  --chart-1: #4a8ae0;
+  --chart-2: #8db8f0;
+  --chart-3: #1459b8;
+  --chart-4: #3fb68b;
+  --chart-5: #d9a441;
+  --sidebar: #051225;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #d62828;
+  --sidebar-primary: #4a8ae0;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #123044;
+  --sidebar-accent: #123a6e;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #2f6690;
+  --sidebar-ring: #4a8ae0;
+}
+
+/* ---------- Layout: container 1200px + ritme section 8px ---------- */
+
+@utility container-page {
+  width: 100%;
+  max-width: 79rem; /* 1200px konten + 2 x 32px padding */
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility section-y {
+  padding-block: 4rem;
+  @media (min-width: 48rem) {
+    padding-block: 5rem;
+  }
+  @media (min-width: 64rem) {
+    padding-block: 6.5rem;
+  }
+}
+
+/* ---------- Skala tipografi ---------- */
+
+@utility type-h1 {
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  @media (min-width: 40rem) {
+    font-size: 3rem;
+  }
+  @media (min-width: 64rem) {
+    font-size: 3.5rem;
+  }
+}
+
+@utility type-h2 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  @media (min-width: 40rem) {
+    font-size: 2rem;
+  }
+  @media (min-width: 64rem) {
+    font-size: 2.5rem;
+  }
+}
+
+@utility type-h3 {
+  font-size: 1.375rem;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  @media (min-width: 64rem) {
+    font-size: 1.5rem;
+  }
 }
 
 @layer base {
@@ -163,8 +239,25 @@
   }
   body {
     @apply bg-background text-foreground;
+    line-height: 1.6;
   }
   html {
     @apply font-sans scroll-smooth;
+  }
+  :where(a, button, summary, input, select, textarea):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
